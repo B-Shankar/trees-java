@@ -7,7 +7,6 @@ public class BinaryTrees {
     private Node root;
 
     public BinaryTrees() {
-
     }
 
     private class Node {
@@ -19,7 +18,6 @@ public class BinaryTrees {
             this.value = value;
         }
     }
-
 
     //insert element
     public void populate(Scanner scanner) {
@@ -61,12 +59,54 @@ public class BinaryTrees {
         display(node.left, indent + "\t");
         display(node.right, indent + "\t");
     }
+    /* INPUT:
+              15
+            /    \
+           6      9
+         /   \
+        8     14
+         \
+          10
+    */
+    /* OUTPUT:
+        15
+            6
+                8
+                    10
+                14
+            9
+    */
+
+
+    public void prettierDisplay() {
+        prettierDisplay(root, 0);
+    }
+
+    private void prettierDisplay(Node node, int level) {
+        if (node == null) {
+            return;
+        }
+
+        prettierDisplay(node.right, level + 1);
+
+        if (level != 0) {
+            for (int i = 0; i < level - 1; i++) {
+                System.out.print("|\t\t");
+            }
+            System.out.println("|------->" + node.value);
+        } else {
+            System.out.println(node.value);
+        }
+        prettierDisplay(node.left, level + 1);
+    }
+
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         BinaryTrees binaryTrees = new BinaryTrees();
         binaryTrees.populate(scanner);
-        binaryTrees.display();
+//        binaryTrees.display();
+        binaryTrees.prettierDisplay();
         scanner.close();
     }
 }
