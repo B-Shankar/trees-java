@@ -94,11 +94,32 @@ class BinarySearchTree {
         }
     }
 
+    public void populateSorted(int[] values) {
+        populateSorted(values, 0, values.length - 1);
+    }
+
+    // Helper method to populate a balanced BST from a sorted array
+    //Steps:
+    //1. Find the middle element of the array and make it the root.
+    //2. Recursively do the same for the left half and right half of the array
+    private void populateSorted(int[] values, int start, int end) {
+        if (start > end) {
+            return;
+        }
+
+        int mid = (start + end) / 2;
+        this.insert(values[mid]);
+        populateSorted(values, start, mid - 1);
+        populateSorted(values, mid + 1, end);
+    }
+
     public static void main(String[] args) {
         BinarySearchTree bst = new BinarySearchTree();
         //int[] values = {15, 10, 20, 5, 12, 8}; //Balanced: false
-        int[] values = {20, 10, 30, 5, 15, 25, 35, 3, 7, 13, 17}; //Balanced: true
-        bst.populate(values);
+        //int[] values = {20, 10, 30, 5, 15, 25, 35, 3, 7, 13, 17}; //Balanced: true
+        int[] values = {3, 5, 7, 8, 10, 12, 13, 15, 17, 20, 25, 30, 35}; //Balanced: true
+        bst.populateSorted(values); //Use this for sorted array input to create a balanced BST
+        //bst.populate(values);
 
         bst.display();
 
