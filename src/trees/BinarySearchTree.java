@@ -96,7 +96,8 @@ class BinarySearchTree {
 
     public static void main(String[] args) {
         BinarySearchTree bst = new BinarySearchTree();
-        int[] values = {15, 10, 20, 5, 12, 8};
+        //int[] values = {15, 10, 20, 5, 12, 8}; //Balanced: false
+        int[] values = {20, 10, 30, 5, 15, 25, 35, 3, 7, 13, 17}; //Balanced: true
         bst.populate(values);
 
         bst.display();
