@@ -38,6 +38,20 @@ public class TraversalBT {
         inOrder(node.right);
     }
 
+    // 3. Post-Order Traversal: Left -> Right -> Root
+    public void postOrder() {
+        postOrder(root);
+    }
+
+    private void postOrder(BinaryTrees.Node node) {
+        if (node == null) {
+            return;
+        }
+        postOrder(node.left);
+        postOrder(node.right);
+        System.out.print(node.value + " ");
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         BinaryTrees binaryTrees = new BinaryTrees();
@@ -55,6 +69,11 @@ public class TraversalBT {
 
         System.out.print("In-order Traversal: ");
         traversal.inOrder();
+
+        System.out.println();
+
+        System.out.print("Post-order Traversal: ");
+        traversal.postOrder();
 
         scanner.close();
     }
