@@ -9,7 +9,7 @@ public class BinaryTrees {
     public BinaryTrees() {
     }
 
-    private class Node {
+    public class Node {
         int value;
         Node right;
         Node left;
@@ -45,6 +45,10 @@ public class BinaryTrees {
             node.right = new Node(rightValue);
             populate(scanner, node.right);
         }
+    }
+
+    public Node getRoot() {
+        return root;
     }
 
     public void display() {
