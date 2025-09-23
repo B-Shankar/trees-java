@@ -11,6 +11,7 @@ public class TraversalBT {
     }
 
     // 1. Pre-Order Traversal: Root -> Left -> Right
+    //Note: Pre-order traversal is often used to create a copy of the tree.
     public void preOrder() {
         preOrder(root);
     }
@@ -25,6 +26,8 @@ public class TraversalBT {
     }
 
     // 2. In-Order Traversal: Left -> Root -> Right
+    //Note: In a binary search tree, in-order traversal yields values in ascending order.
+    //That is why it is used to get sorted output from a BST.
     public void inOrder() {
         inOrder(root);
     }
@@ -39,6 +42,7 @@ public class TraversalBT {
     }
 
     // 3. Post-Order Traversal: Left -> Right -> Root
+    //Note: Post-Order traversal is often used to delete the tree or free up memory.
     public void postOrder() {
         postOrder(root);
     }
