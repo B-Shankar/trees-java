@@ -1,4 +1,4 @@
-package trees;
+package trees.BinaryTreeAndBinarySearchTree;
 
 //Binary Search Tree: BTS
 class BinarySearchTree {
