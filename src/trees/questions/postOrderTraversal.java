@@ -3,7 +3,7 @@ package trees.questions;
 import java.util.ArrayList;
 import java.util.List;
 
-//94. Binary Tree Inorder Traversal
+//145. Binary Tree Postorder Traversal
 public class postOrderTraversal {
     
     //Definition for a binary tree node.
